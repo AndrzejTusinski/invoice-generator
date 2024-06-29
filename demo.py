@@ -3,10 +3,19 @@ from tkinter import *
 window = Tk()
 window.title("Invoice Generator")
 
+medicines = {
+    "Medicine A": 10,
+    "Medicine B": 15,
+    "Medicine C": 20,
+    "Medicine D": 30
+}
+
 medicine_label = Label(window, text="Medicine: ")
 medicine_label.pack()
 
 medicine_listbox = Listbox(window, selectmode=SINGLE)
+for medicine in medicines:
+    medicine_listbox.insert(END, medicine)
 medicine_listbox.pack()
 
 quantity_label = Label(window, text="Quantity")
